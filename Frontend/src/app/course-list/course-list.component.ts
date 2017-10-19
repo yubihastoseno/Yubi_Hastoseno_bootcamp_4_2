@@ -24,7 +24,6 @@ export class CourseListComponent implements OnInit {
     return course;
   }
   AddCourse(): void {
-    var error = "";
     if (this.api.courselist.length != 0 && this.api.nama != null) {
       var lastid = this.api.courselist[this.api.courselist.length - 1]['id'];
       var obj = {
