@@ -24,7 +24,8 @@ export class CourseListComponent implements OnInit {
     return course;
   }
   AddCourse(): void {
-    if (this.api.courselist.length != 0) {
+    var error = "";
+    if (this.api.courselist.length != 0 && this.api.nama != null) {
       var lastid = this.api.courselist[this.api.courselist.length - 1]['id'];
       var obj = {
         'id': lastid + 1,
@@ -34,7 +35,6 @@ export class CourseListComponent implements OnInit {
       };
       this.api.courselist.push(obj);
       console.log(this.api.courselist);
-
     }
   }
 }
